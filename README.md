@@ -11,7 +11,18 @@ https://www.kaggle.com/sulianova/cardiovascular-disease-dataset#cardio_train.csv
 数据集包括年龄、性别、收缩压、舒张压等12个特征的患者数据记录7万份。当患者有心血管疾病时，标签类“cardio”等于1，如果患者健康，则为0。所有数据集都是在体检时收集的。
 ### 2.2 数据描述
 有三种类型的输入特征: Objective: 客观事实; Examination: 体检结果; Subjective: 患者提供的信息
-| 左对齐标题 | 右对齐标题 | 居中对齐标题 | Value Type |
+| 特征 | 变量类型 | 变量 | Value Type |
 | :------: | :------: | :------: | :------: |
-| 短文本 | 中等文本 | 稍微长一点的文本 |
-| 稍微长一点的文本 | 短文本 | 中等文本 |
+| Age | 客观事实 | 年龄 | Int(days)
+| Height | 客观事实 | 身高 | Int(cm)
+| Weight | 客观事实 | 年龄 | Float(kg)
+| Gender | 客观事实 | 性别(1-F,2-M) | Categorical code
+| Systolic blood pressure | 检查特征 | ap_hi（舒张压）| Int
+| Diastolic blood pressure | 检查特征 | ap_lo（收缩压）| Int
+| Cholesterol | 检查特征 | 胆固醇 |1：正常；2：高于正常；3、远高于正常
+| Glucose| 检查特征 | gluc(葡萄糖)| 1：正常；2：高于正常；3、远高于正常
+| Smoking| 主观特征 | smoke| binary(1:吸烟；0：不吸烟)
+| Alcohol intake| 主观特征 | alco | binary(1:喝酒；0：不喝酒)
+| Physical activity| 主观特征 | active| binary(1:参加；0：不参加)
+| Presence or absence of cardiovascular disease| 目标变量 | Cardio| binary(1:患病；0：健康)
+
