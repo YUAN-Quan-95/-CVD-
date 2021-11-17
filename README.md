@@ -1,5 +1,5 @@
 # 心血管疾病（CVD）数据分析报告
-##0 分析框架  
+## 0 分析框架  
 ![image](https://user-images.githubusercontent.com/75609874/136686805-18480575-425d-4a94-a739-0510ee647852.png)
 ## 1 分析背景和目的
 ### 1.1 分析背景
@@ -24,5 +24,22 @@ https://www.kaggle.com/sulianova/cardiovascular-disease-dataset#cardio_train.csv
 | Smoking| 主观特征 | smoke| binary(1:吸烟；0：不吸烟)
 | Alcohol intake| 主观特征 | alco | binary(1:喝酒；0：不喝酒)
 | Physical activity| 主观特征 | active| binary(1:参加；0：不参加)
-| Presence or absence of cardiovascular disease| 目标变量 | Cardio| binary(1:患病；0：健康)
-
+| Presence or absence of cardiovascular disease| 目标变量 | Cardio| binary(1:患病；0：健康)  
+### 2.3 创建环境分析环境并导入数据
+```
+import numpy as np
+import pandas as pd
+import pandas_profiling
+import matplotlib.pyplot as plt
+import seaborn as sns
+#忽略警告
+import warnings
+warnings.filterwarnings('ignore')
+%matplotlib inline
+from sklearn.model_selection import train_test_split
+#逻辑回归算法
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report,confusion_matrix
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
+```
