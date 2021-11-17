@@ -8,7 +8,6 @@
 ## 2 数据准备
 ### 2.1 数据来源
 https://www.kaggle.com/sulianova/cardiovascular-disease-dataset#cardio_train.csv.   
-
 数据集包括年龄、性别、收缩压、舒张压等12个特征的患者数据记录7万份。当患者有心血管疾病时，标签类“cardio”等于1，如果患者健康，则为0。所有数据集都是在体检时收集的。
 ### 2.2 数据描述
 有三种类型的输入特征: Objective: 客观事实; Examination: 体检结果; Subjective: 患者提供的信息
