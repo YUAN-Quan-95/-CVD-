@@ -47,13 +47,20 @@ df = pd.read_csv(r'/Users/Yuri Yuan/Desktop/cardio_train.csv',sep=';')
 df.head()
 ```
 ![image](https://user-images.githubusercontent.com/75609874/142215413-ac34f062-6160-4498-811d-43df69767312.png)<br>
-数据加载后，数据基本情况如图。从图中可以看到加载后的数据一共70000行、13列，占用内存6.9MB。在数据类型上，所有特征均为数值型，12个整型和1个float类型，而且无缺失值。  
 ## 3 数据清洗<br>
 ### 3.1 查看数据信息
 ```
 #查看数据信息
 df.info()
 ```
+数据加载后，数据基本情况如图。从图中可以看到加载后的数据一共70000行、13列，占用内存6.9MB。在数据类型上，所有特征均为数值型，12个整型和1个float类型，而且无缺失值。  
+![image](https://user-images.githubusercontent.com/75609874/142217837-900f7c80-59fe-4d4e-bdf8-6dc4a50e4e7e.png)<br>
+### 3.2 数据处理步骤<br>
+![image](https://user-images.githubusercontent.com/75609874/142218240-8b659a5e-e067-4ccb-83da-e454272e1069.png)
+
+
+
+
 
 #pandas_profiling.ProfileReport(df)
 #选择子集:id列无意义将其删除
