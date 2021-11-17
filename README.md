@@ -42,4 +42,23 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report,confusion_matrix
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
+#导入数据
+df = pd.read_csv(r'/Users/Yuri Yuan/Desktop/cardio_train.csv',sep=';')
+df.head()
+#查看数据信息
+df.info()
+pandas_profiling.ProfileReport(df)
+```
+![image](https://user-images.githubusercontent.com/75609874/142215413-ac34f062-6160-4498-811d-43df69767312.png)
+
+```
+# 3 数据清洗
+#选择子集:id列无意义将其删除
+df.drop(columns=['id'],inplace=True)
+#查看是否有重复值并删除
+df.duplicated().sum()
+df.drop_duplicates(keep='first',inplace =  True)
+#查看是否存在缺失值
+df.isnull().sum()
+
 ```
