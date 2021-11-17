@@ -12,7 +12,7 @@ https://www.kaggle.com/sulianova/cardiovascular-disease-dataset#cardio_train.csv
 ### 2.2 数据描述
 有三种类型的输入特征: Objective: 客观事实; Examination: 体检结果; Subjective: 患者提供的信息
 | 特征 | 变量类型 | 变量 | Value Type |
-| :------: | :------: | :------: | :------: |
+| :----: | :------------: | :------: | :------: |
 | Age | 客观事实 | 年龄 | Int(days)
 | Height | 客观事实 | 身高 | Int(cm)
 | Weight | 客观事实 | 年龄 | Float(kg)
@@ -45,14 +45,17 @@ from sklearn.preprocessing import StandardScaler
 #导入数据
 df = pd.read_csv(r'/Users/Yuri Yuan/Desktop/cardio_train.csv',sep=';')
 df.head()
+```
+![image](https://user-images.githubusercontent.com/75609874/142215413-ac34f062-6160-4498-811d-43df69767312.png)<br>
+数据加载后，数据基本情况如图。从图中可以看到加载后的数据一共70000行、13列，占用内存6.9MB。在数据类型上，所有特征均为数值型，12个整型和1个float类型，而且无缺失值。  
+## 3 数据清洗<br>
+### 3.1 查看数据信息
+```
 #查看数据信息
 df.info()
-pandas_profiling.ProfileReport(df)
 ```
-![image](https://user-images.githubusercontent.com/75609874/142215413-ac34f062-6160-4498-811d-43df69767312.png)
 
-```
-# 3 数据清洗
+#pandas_profiling.ProfileReport(df)
 #选择子集:id列无意义将其删除
 df.drop(columns=['id'],inplace=True)
 #查看是否有重复值并删除
