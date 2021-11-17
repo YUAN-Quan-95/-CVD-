@@ -54,15 +54,13 @@ df.head()
 df.info()
 ```
 数据加载后，数据基本情况如图。从图中可以看到加载后的数据一共70000行、13列，占用内存6.9MB。在数据类型上，所有特征均为数值型，12个整型和1个float类型，而且无缺失值。  
-![image](https://user-images.githubusercontent.com/75609874/142217837-900f7c80-59fe-4d4e-bdf8-6dc4a50e4e7e.png)<br>
+<img src="https://user-images.githubusercontent.com/75609874/142217837-900f7c80-59fe-4d4e-bdf8-6dc4a50e4e7e.png" width="40%">
 ### 3.2 数据处理步骤<br>
 ![image](https://user-images.githubusercontent.com/75609874/142218240-8b659a5e-e067-4ccb-83da-e454272e1069.png)
 
-
-
-
-
-#pandas_profiling.ProfileReport(df)
+```
+#选择子集:id列无意义将其删除
+df.drop(columns=['id'],inplace=True)
 #选择子集:id列无意义将其删除
 df.drop(columns=['id'],inplace=True)
 #查看是否有重复值并删除
@@ -70,5 +68,14 @@ df.duplicated().sum()
 df.drop_duplicates(keep='first',inplace =  True)
 #查看是否存在缺失值
 df.isnull().sum()
+```
+<img src="https://user-images.githubusercontent.com/75609874/142218970-9777dcca-8d53-43ec-b1f8-8e182a041002.png" width="30%">
 
 ```
+#描述性统计分析
+df.describe()
+```
+<img src="https://user-images.githubusercontent.com/75609874/142219425-cd23e310-e58d-4a4b-becb-f9b6742b423c.png" width="100%">
+
+从表格中可以看出height、weight、ap_hi、ap_lo存在异常值,需要对异常值进行处理.仔细观察身高和体重,明显能注意到身高最小值55厘米,最大值高达250cm;体重最小值10kg,最大值200kg,这违背了人体自然规律;除此之外,血压是不能为负值的,且舒张压一般要低于收缩压.
+
